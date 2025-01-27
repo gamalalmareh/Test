@@ -30,9 +30,6 @@
             text-align: center;
             box-shadow: var(--card-shadow);
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         
         header h1 {
@@ -181,26 +178,21 @@
             padding: 15px 30px;
             box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
             display: flex;
+            justify-content: center;
             align-items: center;
-            gap: 20px;
             z-index: 1000;
-        }
-
-        .footer-logo {
-            width: 150px;
-            height: auto;
         }
 
         .credits {
             color: var(--text-color);
             font-size: 0.9rem;
             opacity: 0.8;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="https://logos-world.net/wp-content/uploads/2020/11/Capital-One-Logo.png" alt="Capital One Logo" style="height: 50px; margin-right: 10px;">
         <h1>CS-25-324 Capital One Incident Wizard</h1>
     </header>
     <nav>
@@ -221,7 +213,7 @@
             <h2>Dashboard Overview</h2>
             <p>Current active incidents: 8</p>
             <p>Critical incidents: 3</p>
-            <p class="current-time">Last updated: January 26, 2025 10:00 PM EST</p>
+            <p class="current-time">Last updated: January 26, 2025 11:00 PM EST</p>
         </div>
 
         <div id="mainView" class="card">
@@ -289,10 +281,10 @@
             <h2>Incident Reports</h2>
             <p>Generate and view incident reports for your team.</p>
             <div class="button-group">
-                <a href="#" class="button" onclick="generateReport()">Generate Report</a>
+                <a href="#" class="button">Generate Report</a>
                 <a href="#" class="button">Export Data</a>
             </div>
-            <p class="current-time">Current time: January 26, 2025 10:00 PM EST</p>
+            <p class="current-time">Current time: January 26, 2025 11:00 PM EST</p>
         </div>
 
         <div id="settingsView" class="card">
@@ -306,7 +298,6 @@
     </div>
 
     <div class="footer">
-        <img src="Capital_One-Logo.wine.jpg" alt="Capital One Logo" class="footer-logo">
         <div class="credits">
             Created by: Gamal Almareh, Isaac Lyu, Matthew Baker, and Ahmad Scruggs
         </div>
@@ -344,18 +335,6 @@
             if(viewId === 'dashboardView') {
                 document.getElementById('mainView').style.display = 'block';
             }
-        }
-
-        function generateReport() {
-            const reportTypes = ['Incident Summary', 'System Performance', 'User Activity'];
-            const randomType = reportTypes[Math.floor(Math.random() * reportTypes.length)];
-            const timestamp = new Date().toLocaleString();
-            
-            alert(`Generating ${randomType} Report...\nTimestamp: ${timestamp}\n\nPlease wait while we compile the data.`);
-            
-            setTimeout(() => {
-                alert(`${randomType} Report generated successfully!\nYou can now download or view the report.`);
-            }, 2000);
         }
     </script>
 </body>
