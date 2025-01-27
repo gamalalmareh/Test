@@ -6,8 +6,8 @@
     <title>CS-25-324 Capital One Incident Wizard</title>
     <style>
         :root {
-            --primary-color: #003B70;    /* Capital One's navy blue from logo */
-            --secondary-color: #D03027;  /* Capital One's red from logo */
+            --primary-color: #004B8C;    /* Capital One's navy blue */
+            --secondary-color: #D03027;  /* Capital One's red */
             --text-color: #2c3e50;
             --bg-color: #e8ecf0;
             --card-shadow: 0 8px 16px rgba(0,0,0,0.1);
@@ -20,11 +20,11 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
-            margin-bottom: 100px;
+            margin-bottom: 100px; /* Add space for footer */
         }
         
         header {
-            background: linear-gradient(135deg, var(--primary-color), #0076be);
+            background: linear-gradient(135deg, #004B8C, #0076be);
             color: white;
             padding: 1.5rem 0;
             text-align: center;
@@ -193,37 +193,6 @@
             font-size: 0.9rem;
             opacity: 0.8;
         }
-
-        #reportSummary {
-            margin-top: 20px;
-            padding: 20px;
-            border-radius: 8px;
-            background-color: #f8f9fa;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: var(--card-shadow);
-            z-index: 1001;
-        }
-
-        .modal-backdrop {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 1000;
-        }
     </style>
 </head>
 <body>
@@ -248,7 +217,7 @@
             <h2>Dashboard Overview</h2>
             <p>Current active incidents: 8</p>
             <p>Critical incidents: 3</p>
-            <p class="current-time">Last updated: January 26, 2025 11:00 PM EST</p>
+            <p class="current-time">Last updated: January 26, 2025 10:00 PM EST</p>
         </div>
 
         <div id="mainView" class="card">
@@ -317,53 +286,24 @@
             <h2>Incident Reports</h2>
             <p>Generate and view incident reports for your team.</p>
             <div class="button-group">
-                <a href="#" class="button" onclick="generateReport()">Generate Report</a>
-                <a href="#" class="button" onclick="exportData()">Export Data</a>
+                <a href="#" class="button">Generate Report</a>
+                <a href="#" class="button">Export Data</a>
             </div>
-            <div id="reportSummary" style="display: none;">
-                <h3>Incident Report Summary</h3>
-                <table class="incident-table" style="display: table;">
-                    <tr>
-                        <th>Metric</th>
-                        <th>Value</th>
-                    </tr>
-                    <tr>
-                        <td>Total Incidents</td>
-                        <td>8</td>
-                    </tr>
-                    <tr>
-                        <td>Critical Incidents</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>High Priority</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>Medium Priority</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>Average Resolution Time</td>
-                        <td>4.5 hours</td>
-                    </tr>
-                </table>
-                <p class="current-time">Report generated: January 26, 2025 11:00 PM EST</p>
-            </div>
+            <p class="current-time">Current time: January 26, 2025 10:00 PM EST</p>
         </div>
 
         <div id="settingsView" class="card">
             <h2>System Settings</h2>
             <p>Configure your notification preferences and system settings.</p>
             <div class="button-group">
-                <a href="#" class="button" onclick="showNotificationSettings()">Notification Settings</a>
-                <a href="#" class="button" onclick="showUserPreferences()">User Preferences</a>
+                <a href="#" class="button">Notification Settings</a>
+                <a href="#" class="button">User Preferences</a>
             </div>
         </div>
     </div>
 
     <div class="footer">
-        <img src="https://pplx-res.cloudinary.com/image/upload/v1737947866/user_uploads/nmthXavHhmqmHyZ/Capital_One-Logo.wine.jpg" alt="Capital One Logo" class="footer-logo">
+        <img src="Capital_One-Logo.wine.jpg" alt="Capital One Logo" class="footer-logo">
         <div class="credits">
             Created by: Gamal Almareh, Isaac Lyu, Matthew Baker, and Ahmad Scruggs
         </div>
@@ -378,4 +318,30 @@
         window.__ow.product_name = "chatbot";   
         ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.openwidget.com/openwidget.js",t.head.appendChild(n)}};!n.__ow.asyncInit&&e.init(),n.OpenWidget=n.OpenWidget||e}(window,document,[].slice))
     </script>
-    <noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your
+    <noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
+    <!-- End of ChatBot code -->
+
+    <script>
+        function toggleIncidentTable() {
+            const table = document.getElementById('incidentTable');
+            if (table.style.display === 'none' || table.style.display === '') {
+                table.style.display = 'table';
+            } else {
+                table.style.display = 'none';
+            }
+        }
+
+        function showView(viewId) {
+            document.getElementById('dashboardView').style.display = 'none';
+            document.getElementById('mainView').style.display = 'none';
+            document.getElementById('reportsView').style.display = 'none';
+            document.getElementById('settingsView').style.display = 'none';
+            
+            document.getElementById(viewId).style.display = 'block';
+            if(viewId === 'dashboardView') {
+                document.getElementById('mainView').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
