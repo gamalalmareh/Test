@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
             --primary-color: #004C97;    /* Capital One's official blue */
             --secondary-color: #D03027;  /* Capital One's red */
             --text-color: #2c3e50;
-            --bg-color: #f8f9fa;
+            --bg-color: #e8ecf0;         /* Softer background color */
             --card-shadow: 0 8px 16px rgba(0,0,0,0.1);
         }
         
@@ -90,7 +91,7 @@
         }
         
         .card {
-            background-color: white;
+            background-color: #f8f9fa;
             border-radius: 12px;
             box-shadow: var(--card-shadow);
             padding: 2rem;
@@ -192,7 +193,6 @@
             <h2>Welcome to Incident Wizard</h2>
             <p>Streamline your incident management process with our powerful and intuitive tools. Quickly report, track, and resolve incidents with ease.</p>
             <div class="button-group">
-                <a href="#" class="button">Create New Incident</a>
                 <a href="#" class="button" onclick="toggleIncidentTable()">View Active Incidents</a>
             </div>
 
@@ -232,6 +232,46 @@
                         <td>2025-01-25</td>
                         <td>2025-01-26 18:15 EST</td>
                     </tr>
+                    <tr>
+                        <td>INC004</td>
+                        <td>Online Banking Login Failure</td>
+                        <td class="priority-high">High</td>
+                        <td class="status-open">Open</td>
+                        <td>2025-01-26</td>
+                        <td>2025-01-26 21:30 EST</td>
+                    </tr>
+                    <tr>
+                        <td>INC005</td>
+                        <td>Data Center Power Fluctuation</td>
+                        <td class="priority-critical">Critical</td>
+                        <td class="status-inprogress">In Progress</td>
+                        <td>2025-01-26</td>
+                        <td>2025-01-26 21:15 EST</td>
+                    </tr>
+                    <tr>
+                        <td>INC006</td>
+                        <td>Branch Network Connectivity Issues</td>
+                        <td class="priority-medium">Medium</td>
+                        <td class="status-inprogress">In Progress</td>
+                        <td>2025-01-26</td>
+                        <td>2025-01-26 19:45 EST</td>
+                    </tr>
+                    <tr>
+                        <td>INC007</td>
+                        <td>Credit Card Reward System Delay</td>
+                        <td class="priority-medium">Medium</td>
+                        <td class="status-open">Open</td>
+                        <td>2025-01-26</td>
+                        <td>2025-01-26 20:45 EST</td>
+                    </tr>
+                    <tr>
+                        <td>INC008</td>
+                        <td>Security Alert - Suspicious Activity</td>
+                        <td class="priority-critical">Critical</td>
+                        <td class="status-inprogress">In Progress</td>
+                        <td>2025-01-26</td>
+                        <td>2025-01-26 21:00 EST</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -260,3 +300,7 @@
     </script>
 </body>
 </html>
+```
+
+Citations:
+[1] https://pplx-res.cloudinary.com/image/upload/v1737947866/user_uploads/nmthXavHhmqmHyZ/Capital_One-Logo.wine.jpg
