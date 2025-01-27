@@ -54,6 +54,27 @@
             font-weight: 600;
             letter-spacing: -0.5px;
         }
+
+        .welcome-section {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .welcome-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .welcome-section p {
+            color: #666;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
         
         nav {
             background-color: white;
@@ -163,13 +184,32 @@
             text-align: right;
             margin-top: 1rem;
         }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            padding: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            width: 150px;
+            height: auto;
+        }
+
+        .credits {
+            color: var(--text-color);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo-container">
-            <img src="https://pplx-res.cloudinary.com/image/upload/v1737947866/user_uploads/nmthXavHhmqmHyZ/Capital_One-Logo.wine.jpg" alt="Capital One Logo" class="logo">
-        </div>
         <h1>CS-25-324 Capital One Incident Wizard</h1>
     </header>
     <nav>
@@ -181,6 +221,11 @@
         </ul>
     </nav>
     <div class="container">
+        <div class="welcome-section">
+            <h2>Welcome to the Incident Wizard</h2>
+            <p>Your centralized platform for managing and tracking incidents across Capital One's systems. Monitor, respond, and resolve issues efficiently with our comprehensive incident management tools.</p>
+        </div>
+
         <div id="dashboardView" class="card">
             <h2>Dashboard Overview</h2>
             <p>Current active incidents: 8</p>
@@ -230,6 +275,22 @@
                         <td>2025-01-25</td>
                         <td>2025-01-26 18:15 EST</td>
                     </tr>
+                    <tr>
+                        <td>INC004</td>
+                        <td>Online Banking Login Failure</td>
+                        <td class="priority-high">High</td>
+                        <td class="status-open">Open</td>
+                        <td>2025-01-26</td>
+                        <td>2025-01-26 21:30 EST</td>
+                    </tr>
+                    <tr>
+                        <td>INC005</td>
+                        <td>Data Center Power Fluctuation</td>
+                        <td class="priority-critical">Critical</td>
+                        <td class="status-inprogress">In Progress</td>
+                        <td>2025-01-26</td>
+                        <td>2025-01-26 21:15 EST</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -254,6 +315,25 @@
         </div>
     </div>
 
+    <div class="footer">
+        <img src="Capital_One-Logo.wine.jpg" alt="Capital One Logo" class="footer-logo">
+        <div class="credits">
+            Created by: Gamal Almareh, Isaac Lyu, Matthew Baker, and Ahmad Scruggs
+        </div>
+    </div>
+
+    <!-- Start of ChatBot code -->
+    <script>
+        window.__ow = window.__ow || {};
+        window.__ow.organizationId = "41277a6a-c49c-4136-9e3b-3dddfaccbb1f";
+        window.__ow.template_id = "8952b9e3-423c-424e-b122-e0462f58ff89";
+        window.__ow.integration_name = "manual_settings";
+        window.__ow.product_name = "chatbot";   
+        ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.openwidget.com/openwidget.js",t.head.appendChild(n)}};!n.__ow.asyncInit&&e.init(),n.OpenWidget=n.OpenWidget||e}(window,document,[].slice))
+    </script>
+    <noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
+    <!-- End of ChatBot code -->
+
     <script>
         function toggleIncidentTable() {
             const table = document.getElementById('incidentTable');
@@ -276,16 +356,5 @@
             }
         }
     </script>
-        <!-- Start of ChatBot (www.chatbot.com) code -->
-<script>
-    window.__ow = window.__ow || {};
-    window.__ow.organizationId = "41277a6a-c49c-4136-9e3b-3dddfaccbb1f";
-    window.__ow.template_id = "8952b9e3-423c-424e-b122-e0462f58ff89";
-    window.__ow.integration_name = "manual_settings";
-    window.__ow.product_name = "chatbot";   
-    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.openwidget.com/openwidget.js",t.head.appendChild(n)}};!n.__ow.asyncInit&&e.init(),n.OpenWidget=n.OpenWidget||e}(window,document,[].slice))
-  </script>
-  <noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
-  <!-- End of ChatBot code -->
 </body>
 </html>
