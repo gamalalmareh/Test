@@ -1,101 +1,119 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Chat Widget Embedded example | ChatBot.com</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <style type="text/css">
-        body {
-            background: #FFFFFF;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Wizard</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --bg-color: #ecf0f1;
         }
-
-        * {
-            font-family: 'Open Sans', sans-serif;
-            box-sizing: border-box;
-            color: #22272D;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        nav {
+            background-color: var(--secondary-color);
+            padding: 0.5rem 0;
+        }
+        nav ul {
+            list-style-type: none;
             padding: 0;
             margin: 0;
+            text-align: center;
         }
-
-        h1 {
-            width: 100%;
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s;
         }
-
-        iframe {
-            border: 0;
+        nav ul li a:hover {
+            color: var(--accent-color);
         }
-
-        section {
-            max-width: 1000px;
-            display: grid;
-            grid-template-columns: 420px 1fr;
-            gap: 24px;
-            padding: 24px;
-            margin: 0 auto;
-            justify-items: center;
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
         }
-
-        section > .container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
         }
-
-        section > .container > div {
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            border: 1px solid #F2F2F2;
-            border-radius: 20px;
-            padding: 24px;
-            gap: 1rem;
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+            font-weight: bold;
+            margin-right: 10px;
         }
-
-        section div p {
-            width: 100%;
-            border-radius: 20px;
-            background: #F2F2F2;
-            padding: 6px;
+        .button:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
         }
-
-        #widget {
-            width: 100%;
-            min-width: 420px;
-            min-height: 710px;
-            height: auto;
-        }
-
-        @media only screen and (max-width: 768px) {
-            section {
-                grid-template-columns: 1fr;
-            }
+        .button-group {
+            margin-top: 1rem;
         }
     </style>
 </head>
 <body>
-    <section>
-        <div id="widget"></div>
-        <div class="container">
-            <div>
-                <img width="120" alt="ChatBot logo" src="https://www.chatbot.com/chatbot-logo.svg" />
-                <h1>Embedded Chat Widget</h1>
-                <div>
-                    This is an example of the implementation of an embedded Chat Widget. You can find and reuse the code used on this page. It can be found on our <strong><a href="https://gist.github.com/humannus/ad5c4f407a81cbe6f0a5a8014c7315a9" target="_blank">GitHub Repository</a></strong>. A tutorial covering the implementation process is <strong><a href="https://www.chatbot.com/help/install-chatbot/widget-installation/#how-to-embed-chat-widget-on-a-website" target="_blank">available here</a></strong>.
-                </div>
-            </div>
-            <div>
-                <p></p><p></p><p></p><p></p>
-            </div>
-            <div>
-                <p></p><p></p><p></p><p></p>
-            </div>
-            <div>
-                <p></p><p></p><p></p><p></p>
+    <header>
+        <h1>Incident Wizard</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">New Incident</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <h2>Welcome to Incident Wizard</h2>
+            <p>Streamline your incident management process with our powerful and intuitive tools. Quickly report, track, and resolve incidents with ease.</p>
+            <div class="button-group">
+                <a href="#" class="button">Create New Incident</a>
+                <a href="#" class="button">View Active Incidents</a>
             </div>
         </div>
-    </section>
-<!-- Start of ChatBot (www.chatbot.com) code -->
+        <div class="card">
+            <h2>Recent Incidents</h2>
+            <p>Here you can see a summary of your most recent incidents. Click on any incident to view more details or update its status.</p>
+            <!-- Add a table or list of recent incidents here -->
+        </div>
+    </div>
+    <!-- Start of ChatBot (www.chatbot.com) code -->
 <script>
     window.__ow = window.__ow || {};
     window.__ow.organizationId = "41277a6a-c49c-4136-9e3b-3dddfaccbb1f";
