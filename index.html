@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Incident Wizard</title>
+    <title>CS-25-324 Capital One Incident Wizard</title>
     <style>
         :root {
-            --primary-color: #004B8C;    /* Capital One's navy blue */
+            --primary-color: #004C97;    /* Capital One's official blue */
             --secondary-color: #D03027;  /* Capital One's red */
             --text-color: #2c3e50;
             --bg-color: #f8f9fa;
@@ -37,7 +37,7 @@
         }
         
         header {
-            background: linear-gradient(135deg, #004B8C, #0076be);
+            background: linear-gradient(135deg, #004C97, #0076be);
             color: white;
             padding: 1.5rem 0;
             text-align: center;
@@ -137,6 +137,39 @@
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
         }
+
+        .incident-table {
+            display: none;
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .incident-table th, .incident-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .incident-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .incident-table tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .priority-high { color: #e74c3c; font-weight: bold; }
+        .priority-medium { color: #f39c12; font-weight: bold; }
+        .priority-critical { color: #c0392b; font-weight: bold; }
+        
+        .status-open { color: #e74c3c; font-weight: bold; }
+        .status-inprogress { color: #f39c12; font-weight: bold; }
+        .status-resolved { color: #27ae60; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -160,15 +193,51 @@
             <p>Streamline your incident management process with our powerful and intuitive tools. Quickly report, track, and resolve incidents with ease.</p>
             <div class="button-group">
                 <a href="#" class="button">Create New Incident</a>
-                <a href="#" class="button">View Active Incidents</a>
+                <a href="#" class="button" onclick="toggleIncidentTable()">View Active Incidents</a>
             </div>
-        </div>
-        <div class="card">
-            <h2>Recent Incidents</h2>
-            <p>Here you can see a summary of your most recent incidents. Click on any incident to view more details or update its status.</p>
+
+            <table id="incidentTable" class="incident-table">
+                <thead>
+                    <tr>
+                        <th>Incident ID</th>
+                        <th>Title</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Reported Date</th>
+                        <th>Last Updated</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>INC001</td>
+                        <td>Credit Card Processing System Outage</td>
+                        <td class="priority-critical">Critical</td>
+                        <td class="status-open">Open</td>
+                        <td>2025-01-26</td>
+                        <td>2025-01-26 21:45 EST</td>
+                    </tr>
+                    <tr>
+                        <td>INC002</td>
+                        <td>Mobile App Authentication Issue</td>
+                        <td class="priority-high">High</td>
+                        <td class="status-inprogress">In Progress</td>
+                        <td>2025-01-26</td>
+                        <td>2025-01-26 20:30 EST</td>
+                    </tr>
+                    <tr>
+                        <td>INC003</td>
+                        <td>ATM Network Connectivity</td>
+                        <td class="priority-medium">Medium</td>
+                        <td class="status-resolved">Resolved</td>
+                        <td>2025-01-25</td>
+                        <td>2025-01-26 18:15 EST</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-    <!-- Start of ChatBot (www.chatbot.com) code -->
+
+    <!-- Start of ChatBot code -->
     <script>
         window.__ow = window.__ow || {};
         window.__ow.organizationId = "41277a6a-c49c-4136-9e3b-3dddfaccbb1f";
@@ -178,6 +247,16 @@
         ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.openwidget.com/openwidget.js",t.head.appendChild(n)}};!n.__ow.asyncInit&&e.init(),n.OpenWidget=n.OpenWidget||e}(window,document,[].slice))
     </script>
     <noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
-    <!-- End of ChatBot code -->
+
+    <script>
+        function toggleIncidentTable() {
+            const table = document.getElementById('incidentTable');
+            if (table.style.display === 'none' || table.style.display === '') {
+                table.style.display = 'table';
+            } else {
+                table.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
