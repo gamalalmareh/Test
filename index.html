@@ -30,6 +30,9 @@
             text-align: center;
             box-shadow: var(--card-shadow);
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         header h1 {
@@ -197,6 +200,7 @@
 </head>
 <body>
     <header>
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Capital-One-Logo.png" alt="Capital One Logo" style="height: 50px; margin-right: 10px;">
         <h1>CS-25-324 Capital One Incident Wizard</h1>
     </header>
     <nav>
@@ -225,7 +229,6 @@
             <div class="button-group">
                 <a href="#" class="button" onclick="toggleIncidentTable()">View Active Incidents</a>
             </div>
-
             <table id="incidentTable" class="incident-table">
                 <thead>
                     <tr>
@@ -286,7 +289,7 @@
             <h2>Incident Reports</h2>
             <p>Generate and view incident reports for your team.</p>
             <div class="button-group">
-                <a href="#" class="button">Generate Report</a>
+                <a href="#" class="button" onclick="generateReport()">Generate Report</a>
                 <a href="#" class="button">Export Data</a>
             </div>
             <p class="current-time">Current time: January 26, 2025 10:00 PM EST</p>
@@ -341,6 +344,18 @@
             if(viewId === 'dashboardView') {
                 document.getElementById('mainView').style.display = 'block';
             }
+        }
+
+        function generateReport() {
+            const reportTypes = ['Incident Summary', 'System Performance', 'User Activity'];
+            const randomType = reportTypes[Math.floor(Math.random() * reportTypes.length)];
+            const timestamp = new Date().toLocaleString();
+            
+            alert(`Generating ${randomType} Report...\nTimestamp: ${timestamp}\n\nPlease wait while we compile the data.`);
+            
+            setTimeout(() => {
+                alert(`${randomType} Report generated successfully!\nYou can now download or view the report.`);
+            }, 2000);
         }
     </script>
 </body>
